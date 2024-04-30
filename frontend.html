@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #adadad;
+            text-align: center;
+        }
+
+        header {
+            display: inline-block;
+            margin-top: 27vh;
+            width: 60%;
+            background-color: #8f8989;
+            border: 2px solid #333;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            margin-top: 20px;
+            color: #000000;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        #uploadInput {
+            margin: 15px 0;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .custom-file-upload {
+            padding: 10px 20px;
+            border: 1px solid #000000;
+            border-radius: 5px;
+            background-color: #ffffff;
+            color: #333;
+            font-size: 15px;
+            cursor: pointer;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .custom-file-upload:hover {
+            background-color: #000000;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Image Captioning</h1>
+    </header>
+    <div class="form">
+        <form action="http://127.0.0.1:5000/predict" method="POST" enctype="multipart/form-data" target="_blank">
+            <label for="uploadInput" class="custom-file-upload">
+                Choose an image to upload
+            </label>
+            <input type="file" accept="image/*" name="file" id="uploadInput" style="display: none;">
+            <button type="submit">Upload Image</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
